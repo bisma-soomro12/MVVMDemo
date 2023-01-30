@@ -16,13 +16,19 @@ class ViewModel{
     
     init(apiRepository: ApiCallReposiory) {
         self.apiRepository = apiRepository
-        self.fetchDataFromRepository()
+       // self.fetchDataFromRepository()
     }
     
     
-    func fetchDataFromRepository(){
-        apiRepository?.fetch(completionHandler: { posts in
-            self.postList = posts
+    func fetchDataFromRepository(url: String){
+
+        apiRepository?.fetchData(url: url, completion: { result in
+            switch result{
+            case .success(let posts):
+                self.postList = posts
+            case .failure(let err):
+                print(err.localizedDescription)
+            }
         })
     }
 }

@@ -6,23 +6,21 @@
 //
 
 import Foundation
+
+
+
 class ApiCallReposiory{
     
-    
-    func fetch(completionHandler: @escaping ([PostModel]) -> () ){
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data, error == nil else { return }
-            do{
-                let posts = try JSONDecoder().decode([PostModel].self, from: data)
-                DispatchQueue.main.async {
-                    //self?.posts = posts
-                    completionHandler(posts)
-                }
-            } catch{
-                print(error)
-            }
-        }
-        task.resume()
+    func fetchData(url: String, completion: @escaping (Result<[PostModel], ApiError>) -> Void){
+        NetworkHandler.instance.request(url: url, completion: completion)
     }
+    
+    func fetchComments(url: String, completion: @escaping (Result<[CommentModel], ApiError>) -> Void){
+        NetworkHandler.instance.request(url: url, completion: completion)
+    }
+    
+    func fetchAlbums(url: String, completion: @escaping (Result<[AlbumsModel], ApiError>) -> Void){
+        NetworkHandler.instance.request(url: url, completion: completion)
+    }
+    
 }
