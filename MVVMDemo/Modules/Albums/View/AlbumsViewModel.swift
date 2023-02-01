@@ -10,10 +10,10 @@ import Combine
 
 class AlbumsViewModel {
     
-    var repository: ApiCallReposiory?
+    var repository: AlbumsRepository?
     @Published var albumList = [AlbumsModel]()
     
-    init(repository: ApiCallReposiory) {
+    init(repository: AlbumsRepository) {
         self.repository = repository
     }
     

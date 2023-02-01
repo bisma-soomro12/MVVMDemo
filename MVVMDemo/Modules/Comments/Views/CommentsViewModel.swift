@@ -10,10 +10,10 @@ import Combine
 
 class CommentsViewModel{
     
-    var repository: ApiCallReposiory?
+    var repository: CommentRepository?
    @Published var commentList = [CommentModel]()
     
-    init(repository: ApiCallReposiory) {
+    init(repository: CommentRepository) {
         self.repository = repository
     }
     

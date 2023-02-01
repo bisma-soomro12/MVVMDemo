@@ -8,35 +8,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--CommentsVC-->
-        <scene sceneID="u6t-rQ-mxZ">
+        <!--Post View-->
+        <scene sceneID="FMZ-eh-xNc">
             <objects>
-                <viewController storyboardIdentifier="CommentsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jOu-Rv-t0X" customClass="CommentsVC" customModule="MVVMDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="MXV-g5-CsY">
+                <viewController storyboardIdentifier="PostVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ws5-1e-iWU" customClass="PostView" customModule="MVVMDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5rQ-f1-RuL">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="EcZ-ay-fT8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bdr-z5-AbG">
                                 <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="STN-2Y-tXP"/>
+                        <viewLayoutGuide key="safeArea" id="rSk-i9-6iK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="EcZ-ay-fT8" firstAttribute="top" secondItem="STN-2Y-tXP" secondAttribute="top" id="CYz-7P-obJ"/>
-                            <constraint firstItem="STN-2Y-tXP" firstAttribute="trailing" secondItem="EcZ-ay-fT8" secondAttribute="trailing" id="uMp-7h-qiR"/>
-                            <constraint firstItem="EcZ-ay-fT8" firstAttribute="leading" secondItem="STN-2Y-tXP" secondAttribute="leading" id="vgZ-fx-wH6"/>
-                            <constraint firstItem="STN-2Y-tXP" firstAttribute="bottom" secondItem="EcZ-ay-fT8" secondAttribute="bottom" id="w5B-VN-VBi"/>
+                            <constraint firstItem="rSk-i9-6iK" firstAttribute="trailing" secondItem="bdr-z5-AbG" secondAttribute="trailing" id="BiX-fr-e6H"/>
+                            <constraint firstItem="bdr-z5-AbG" firstAttribute="leading" secondItem="rSk-i9-6iK" secondAttribute="leading" id="KAg-Sv-TXH"/>
+                            <constraint firstItem="rSk-i9-6iK" firstAttribute="bottom" secondItem="bdr-z5-AbG" secondAttribute="bottom" id="W0O-lk-LKZ"/>
+                            <constraint firstItem="bdr-z5-AbG" firstAttribute="top" secondItem="rSk-i9-6iK" secondAttribute="top" id="d6T-z1-V7h"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="EcZ-ay-fT8" id="Onx-QM-faU"/>
+                        <outlet property="tableView" destination="bdr-z5-AbG" id="QnM-hN-TTI"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QWB-fj-YfK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cla-0F-5Pj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103" y="-188"/>
+            <point key="canvasLocation" x="-2277" y="-414"/>
         </scene>
     </scenes>
     <resources>

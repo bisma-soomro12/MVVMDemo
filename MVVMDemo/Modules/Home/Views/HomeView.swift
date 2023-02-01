@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainVC: UIViewController {
+class HomeView: UIViewController {
     
     @IBOutlet weak var albumBtn: UIButton!
     @IBOutlet weak var commentBtn: UIButton!
@@ -20,7 +20,7 @@ class MainVC: UIViewController {
 
     @IBAction func postsBtnDidTap(_ sender: Any) {
        let storyBoard = UIStoryboard(name: "Posts", bundle: nil)
-        if let vc = storyBoard.instantiateViewController(withIdentifier: "PostVC" ) as? PostVC{
+        if let vc = storyBoard.instantiateViewController(withIdentifier: "PostVC" ) as? PostView{
             present(vc, animated: true)
         }
         
@@ -28,7 +28,7 @@ class MainVC: UIViewController {
     @IBAction func commentsBtnDidTap(_ sender: Any) {
         
         let storyBoard = UIStoryboard(name: "Comments", bundle: nil)
-        if let vc = storyBoard.instantiateViewController(withIdentifier: "CommentsVC") as? CommentsVC{
+        if let vc = storyBoard.instantiateViewController(withIdentifier: "CommentsVC") as? CommentsView{
             present(vc, animated: true)
         }
         
@@ -36,7 +36,7 @@ class MainVC: UIViewController {
     @IBAction func albumsBtnDidTap(_ sender: Any) {
         
         let storyBoard = UIStoryboard(name: "Albums", bundle: nil)
-        if let vc = storyBoard.instantiateViewController(withIdentifier: "AlbumVC") as? AlbumVC {
+        if let vc = storyBoard.instantiateViewController(withIdentifier: "AlbumVC") as? AlbumView {
             present(vc, animated: true)
         }
     }

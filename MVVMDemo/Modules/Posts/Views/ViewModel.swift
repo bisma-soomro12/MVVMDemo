@@ -11,10 +11,10 @@ import Combine
 class ViewModel{
 
     @Published  var postList = [PostModel]()
-    var apiRepository : ApiCallReposiory?
+    var apiRepository : PostRepository?
     var selectedPost : PostModel?
     
-    init(apiRepository: ApiCallReposiory) {
+    init(apiRepository: PostRepository) {
         self.apiRepository = apiRepository
        // self.fetchDataFromRepository()
     }

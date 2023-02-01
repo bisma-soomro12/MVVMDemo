@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class AlbumVC: UIViewController {
+class AlbumView: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var viewModel : AlbumsViewModel?
     var cancelables = Set<AnyCancellable>()
@@ -16,7 +16,7 @@ class AlbumVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel = AlbumsViewModel(repository: ApiCallReposiory())
+        viewModel = AlbumsViewModel(repository: AlbumsRepository())
         
         tableView.register(UINib(nibName: "AlbumCell", bundle: nil), forCellReuseIdentifier: "AlbumCellId")
         tableView.delegate = self
@@ -36,7 +36,7 @@ class AlbumVC: UIViewController {
     }
 }
 
-extension AlbumVC: UITableViewDelegate, UITableViewDataSource{
+extension AlbumView: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.albumList.count ?? 0
     }

@@ -1,5 +1,5 @@
 //
-//  PostVC.swift
+//  PostView.swift
 //  MVVMDemo
 //
 //  Created by Bisma Soomro-AIK on 1/30/23.
@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class PostVC: UIViewController {
+class PostView: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var viewModel : ViewModel?
@@ -16,7 +16,7 @@ class PostVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                viewModel = ViewModel(apiRepository: ApiCallReposiory())
+                viewModel = ViewModel(apiRepository: PostRepository())
                 tableView.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "PostCellId")
                 tableView.delegate = self
                 tableView.dataSource = self
@@ -38,7 +38,7 @@ class PostVC: UIViewController {
         }
 }
 
-extension PostVC : UITableViewDelegate, UITableViewDataSource{
+extension PostView : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.postList.count ?? 0
     }

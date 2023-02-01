@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class CommentsVC: UIViewController {
+class CommentsView: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var viewModel : CommentsViewModel?
@@ -16,7 +16,7 @@ class CommentsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = CommentsViewModel(repository: ApiCallReposiory())
+        viewModel = CommentsViewModel(repository: CommentRepository())
         
         tableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: "CommentCellId")
         tableView.dataSource = self
@@ -36,7 +36,7 @@ class CommentsVC: UIViewController {
 
 }
 
-extension CommentsVC : UITableViewDelegate, UITableViewDataSource{
+extension CommentsView : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.commentList.count ?? 0
     }
